@@ -55,7 +55,9 @@ Step 2 is the local linear model. Near the base operating point the map is appro
 ```
 
 
-*(Equation 3: J written out as a matrix — see the source .docx.)*
+```math
+J = \begin{pmatrix} \partial\tilde{y}_1/\partial\tilde{x}_1 & \cdots & \partial\tilde{y}_1/\partial\tilde{x}_p \\ \vdots & \ddots & \vdots \\ \partial\tilde{y}_m/\partial\tilde{x}_1 & \cdots & \partial\tilde{y}_m/\partial\tilde{x}_p \end{pmatrix} \tag{3}
+```
 
 | **Object**         | **Size** | **Meaning in this study**                                                       |
 |--------------------|----------|---------------------------------------------------------------------------------|
@@ -74,7 +76,9 @@ J = U\,\Sigma\,V^{\top} \tag{4}
 ```
 
 
-*(Equation 5: \Sigma written out as a matrix — see the source .docx.)*
+```math
+\Sigma = \begin{pmatrix} \sigma_1 & & & \\ & \sigma_2 & & \\ & & \ddots & \\ & & & \sigma_r \\ & & & \end{pmatrix}_{m \times p} \tag{5}
+```
 
 Equivalently, J is a sum of rank-1 pieces — one per mode. Each mode k is an input recipe vₖ, a gain σₖ, and a response signature uₖ: a unit move along the recipe moves the responses by exactly the gain, in the signature's direction, and a general move δ decomposes over the recipes:
 
@@ -116,7 +120,9 @@ The linear J is valid only near one operating point, and CHO responses are curve
 ```
 
 
-*(Equation 11: B written out as a matrix — see the source .docx.)*
+```math
+B = \begin{pmatrix} \beta_{11} & \tfrac{1}{2}\beta_{12} & \cdots & \tfrac{1}{2}\beta_{1p} \\ \tfrac{1}{2}\beta_{12} & \beta_{22} & \cdots & \tfrac{1}{2}\beta_{2p} \\ \vdots & \vdots & \ddots & \vdots \\ \tfrac{1}{2}\beta_{1p} & \tfrac{1}{2}\beta_{2p} & \cdots & \beta_{pp} \end{pmatrix} \tag{11}
+```
 
 The candidate term count follows directly from the matrix: one intercept, p linear terms, p pure quadratics on the diagonal of B, and one term per off-diagonal pair. For p = 6 that is 28 terms per response before any vessel terms are added — the count that drives the analysis choice in Section 5:
 
